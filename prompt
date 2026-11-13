@@ -1,0 +1,119 @@
+Act as an expert React frontend developer and UI/UX designer.
+
+Build the complete frontend for my project named ROUTELESS – Intelligent Rural Transportation and Crisis Management System.
+
+IMPORTANT:
+Create actual working project files in the current workspace. Do not just provide code snippets or explanations.
+
+TECHNOLOGY:
+- React
+- TypeScript
+- Vite
+- Tailwind CSS
+- shadcn/ui
+- Lucide React icons
+- Recharts
+
+DESIGN:
+Create a premium, modern, professional transportation application.
+Use blue, white and light-grey colours.
+Use clean dashboard layouts, attractive cards, rounded corners, responsive navigation, modern typography and interactive maps.
+Make the application fully responsive for mobile and desktop.
+
+The application must have exactly TWO login roles:
+
+1. Student
+2. Transport Agent
+
+Do not create parent, college or administrator login pages.
+
+STUDENT INTERFACES:
+
+1. Welcome page with ROUTELESS logo and tagline.
+2. Student login.
+3. Student registration.
+4. Student dashboard.
+5. Find Alternative Transport page.
+6. Nearby vehicle map and list.
+7. Transport agent details.
+8. Transport request page.
+9. Request status page.
+10. Examination details form.
+11. Crisis notification dashboard.
+12. Updated transport plan page.
+13. Emergency alert confirmation page.
+14. Emergency alert status page.
+15. Student profile.
+16. Parent and college contact details.
+
+STUDENT DASHBOARD:
+Show:
+- Student name.
+- Current location.
+- Find Alternative Transport button.
+- Emergency Alert button.
+- My Requests.
+- Examination details.
+- Crisis notifications.
+- Current transport assignment.
+
+TRANSPORT AGENT INTERFACES:
+
+1. Agent registration.
+2. Agent login.
+3. Agent dashboard.
+4. Vehicle details.
+5. Vehicle capacity.
+6. Availability toggle.
+7. GPS location sharing.
+8. Report vehicle breakdown.
+9. Report road blockage.
+10. Incoming student requests.
+11. Accept/reject request.
+12. Updated route information.
+13. Assigned pickup points.
+14. Trip status.
+15. Request history.
+
+CRISIS MANAGEMENT INTERFACE:
+
+Create a professional crisis dashboard with:
+
+- Total students.
+- Students with upcoming examinations.
+- Available vehicles.
+- Broken vehicles.
+- Blocked roads.
+- Available seats.
+- Assigned students.
+- Students predicted to arrive on time.
+- Students at risk of arriving late.
+- Students without transport.
+
+Include:
+- Interactive map.
+- Vehicle markers.
+- Road blockage indicators.
+- Alternative routes.
+- Student pickup locations.
+- Crisis event timeline.
+- Transport plan updates.
+
+Add two buttons:
+- START EXAMINATION DAY CRISIS SIMULATION
+- RESET SIMULATION
+
+Make all navigation and buttons functional, even if some operations initially use clearly labelled demo data.
+
+Create reusable components and organized project files.
+
+Do not connect the backend yet. Concentrate on completing the frontend first.
+
+After implementation:
+- Run npm install.
+- Run npm run dev.
+- Check the application in the browser if available.
+- Run npm run build.
+- Fix all major errors.
+
+When complete, briefly explain what has been created and what remains for the backend integration.
