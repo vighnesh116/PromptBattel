@@ -6,7 +6,7 @@ RESQ-AI is a rural alternative transportation and student safety platform. Its p
 
 ---
 **Deployed Link** - https://spry-jade-yqs7u1a.tmp.now
-**Note :** The is two different Interface Student and Agent , open url in two different browser
+**Note :** The is two different Interface Student and Agent , open url in two different browser .There also Demo data pre added for quick test 
 ## 🚀 Quick Start (How to Run)
 
 ### 1. Prerequisites
