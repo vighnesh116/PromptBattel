@@ -5,7 +5,7 @@
 RESQ-AI is a rural alternative transportation and student safety platform. Its purpose is to help students discover safe alternative transportation when their regular commute is unavailable, and provide an instant, one-tap Emergency Safety Alert with live GPS coordinates to their parents and college authorities if no transport is available.
 
 ---
-
+**Deployed Link** - https://spry-jade-yqs7u1a.tmp.now
 ## 🚀 Quick Start (How to Run)
 
 ### 1. Prerequisites
