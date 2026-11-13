@@ -187,7 +187,7 @@ const LandingPage: React.FC = () => {
               <Lock className="h-16 w-16 text-blue-600" />
             </div>
             <div>
-              <h2 className="text-2xl font-bold text-gray-800 mb-3">Safety & Privacy First</h2>
+              <h2 className="text-2xl font-bold text-gray-800 mb-3">{t('Safety & Privacy First')}</h2>
               <p className="text-gray-500 leading-relaxed mb-4">
                 RESQ-AI is built with privacy at its core. Your location is only shared with agents you explicitly contact,
                 and emergency contacts you choose. We never sell your data. All communications are encrypted, and you can
@@ -214,20 +214,20 @@ const LandingPage: React.FC = () => {
       <section className="py-16 px-4 bg-white text-center">
         <div className="max-w-2xl mx-auto">
           <Shield className="h-12 w-12 text-blue-600 mx-auto mb-4" />
-          <h2 className="text-3xl font-bold text-gray-800 mb-4">Ready to travel safer?</h2>
-          <p className="text-gray-500 mb-8">Join thousands of rural students who travel with confidence every day.</p>
+          <h2 className="text-3xl font-bold text-gray-800 mb-4">{t('Ready to travel safer?')}</h2>
+          <p className="text-gray-500 mb-8">{t('Join thousands of rural students who travel with confidence every day.')}</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               to="/student/register"
               className="bg-blue-600 text-white px-8 py-3 rounded-xl font-bold hover:bg-blue-700 transition-colors inline-flex items-center justify-center gap-2"
             >
-              <Star className="h-5 w-5" /> Register as Student
+              <Star className="h-5 w-5" /> {t('Register as Student')}
             </Link>
             <Link
               to="/agent/register"
               className="border border-blue-600 text-blue-600 px-8 py-3 rounded-xl font-bold hover:bg-blue-50 transition-colors inline-flex items-center justify-center gap-2"
             >
-              <Phone className="h-5 w-5" /> Register as Agent
+              <Phone className="h-5 w-5" /> {t('Register as Agent')}
             </Link>
           </div>
         </div>
@@ -242,9 +242,9 @@ const LandingPage: React.FC = () => {
         <p>RESQ-AI © 2024 | Rural Alternative Transportation & Student Safety Platform</p>
         <p className="mt-1 text-gray-500">Built with ❤️ by <span className="text-blue-400 font-semibold">Team Token Titans</span></p>
         <div className="mt-4 flex justify-center gap-6 text-xs">
-          <Link to="/student/login" className="hover:text-white transition-colors">Student Portal</Link>
-          <Link to="/agent/login" className="hover:text-white transition-colors">Agent Portal</Link>
-          <Link to="/student/register" className="hover:text-white transition-colors">Get Started</Link>
+          <Link to="/student/login" className="hover:text-white transition-colors">{t('Student Portal')}</Link>
+          <Link to="/agent/login" className="hover:text-white transition-colors">{t('Agent Portal')}</Link>
+          <Link to="/student/register" className="hover:text-white transition-colors">{t('Get Started')}</Link>
         </div>
       </footer>
     </div>

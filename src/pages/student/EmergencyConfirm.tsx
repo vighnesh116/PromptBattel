@@ -6,11 +6,13 @@ import { Button } from '../../components/ui/button';
 import { Alert, AlertDescription } from '../../components/ui/alert';
 import { useAuth } from '../../contexts/AuthContext';
 import { useLocation } from '../../contexts/LocationContext';
+import { useLanguage } from '../../contexts/LanguageContext';
 import { DEMO_EMERGENCY_CONTACTS, DEMO_LOCATION } from '../../lib/demoData';
 import { supabase, isSupabaseConfigured } from '../../lib/supabase';
 
 export default function EmergencyConfirm() {
   const navigate = useNavigate();
+  const { t } = useLanguage();
   const { studentProfile } = useAuth();
   const { location, requestLocation, loading: locationLoading } = useLocation();
 
@@ -88,7 +90,7 @@ export default function EmergencyConfirm() {
         });
       }
     } catch (err: any) {
-      setError(err.message || 'Failed to dispatch emergency alert. Please retry.');
+      setError(err.message || t('Failed to dispatch emergency alert. Please retry.'));
     } finally {
       setLoading(false);
     }
@@ -101,7 +103,7 @@ export default function EmergencyConfirm() {
         className="mb-4 pl-0 hover:bg-transparent"
         onClick={() => navigate('/student/dashboard')}
       >
-        <ArrowLeft className="h-4 w-4 mr-2" /> Back to Dashboard
+        <ArrowLeft className="h-4 w-4 mr-2" /> {t('Back to Dashboard')}
       </Button>
 
       <Card className="border-red-200 shadow-md">
@@ -111,9 +113,9 @@ export default function EmergencyConfirm() {
               <AlertTriangle className="h-7 w-7" />
             </div>
             <div>
-              <CardTitle className="text-2xl text-red-900">Emergency Alert Confirmation</CardTitle>
+              <CardTitle className="text-2xl text-red-900">{t('Emergency Alert Confirmation')}</CardTitle>
               <CardDescription className="text-red-700">
-                Instantly notify your registered parent and college with your current GPS coordinates
+                {t('Instantly notify your registered parent and college with your current GPS coordinates')}
               </CardDescription>
             </div>
           </div>
@@ -122,7 +124,7 @@ export default function EmergencyConfirm() {
         <CardContent className="pt-6 space-y-6">
           <Alert className="bg-amber-50 border-amber-200 text-amber-900">
             <AlertDescription className="text-sm">
-              <strong>Confirmation Required:</strong> Please review the details below before activating. This alert is specifically designed for students stranded in rural areas without transportation.
+              <strong>{t('Confirmation Required:')}</strong> {t('Please review the details below before activating. This alert is specifically designed for students stranded in rural areas without transportation.')}
             </AlertDescription>
           </Alert>
 
@@ -134,24 +136,24 @@ export default function EmergencyConfirm() {
 
           <div className="bg-slate-50 border rounded-lg p-4 space-y-3">
             <h4 className="text-sm font-semibold text-gray-700 uppercase tracking-wider">
-              Emergency Notification Payload
+              {t('Emergency Notification Payload')}
             </h4>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
               <div>
-                <span className="text-muted-foreground block text-xs">Student Name</span>
+                <span className="text-muted-foreground block text-xs">{t('Student Name')}</span>
                 <span className="font-medium text-gray-900">{studentName}</span>
               </div>
               <div>
-                <span className="text-muted-foreground block text-xs">Student ID</span>
+                <span className="text-muted-foreground block text-xs">{t('Student ID')}</span>
                 <span className="font-medium text-gray-900">{studentId}</span>
               </div>
               <div>
-                <span className="text-muted-foreground block text-xs">College</span>
+                <span className="text-muted-foreground block text-xs">{t('College')}</span>
                 <span className="font-medium text-gray-900">{collegeName}</span>
               </div>
               <div>
-                <span className="text-muted-foreground block text-xs">Current Time</span>
+                <span className="text-muted-foreground block text-xs">{t('Current Time')}</span>
                 <span className="font-medium text-gray-900">{new Date().toLocaleTimeString()}</span>
               </div>
             </div>
@@ -160,27 +162,27 @@ export default function EmergencyConfirm() {
               <div className="flex items-center space-x-2 text-gray-700">
                 <MapPin className="h-4 w-4 text-red-600 flex-shrink-0" />
                 <span>
-                  <strong>GPS Location:</strong> {currentLat.toFixed(5)}, {currentLon.toFixed(5)}{' '}
-                  {location?.isManual ? '(Manually Selected)' : '(Live Device GPS)'}
+                  <strong>{t('GPS Location')}:</strong> {currentLat.toFixed(5)}, {currentLon.toFixed(5)}{' '}
+                  {location?.isManual ? `(${t('Manually Selected')})` : `(${t('Live Device GPS')})`}
                 </span>
               </div>
               <div className="flex items-center space-x-2 text-gray-700">
                 <Mail className="h-4 w-4 text-blue-600 flex-shrink-0" />
                 <span>
-                  <strong>Parent Recipient:</strong> {parentEmail}
+                  <strong>{t('Parent Recipient')}:</strong> {parentEmail}
                 </span>
               </div>
               <div className="flex items-center space-x-2 text-gray-700">
                 <School className="h-4 w-4 text-indigo-600 flex-shrink-0" />
                 <span>
-                  <strong>College Desk Recipient:</strong> {collegeEmail}
+                  <strong>{t('College Desk Recipient')}:</strong> {collegeEmail}
                 </span>
               </div>
             </div>
           </div>
 
           <p className="text-center font-medium text-gray-800 text-base">
-            Do you want to share your current location with your parent and college and request emergency assistance?
+            {t('Do you want to share your current location with your parent and college and request emergency assistance?')}
           </p>
         </CardContent>
 
@@ -191,7 +193,7 @@ export default function EmergencyConfirm() {
             onClick={() => navigate('/student/dashboard')}
             disabled={loading}
           >
-            Cancel
+            {t('Cancel')}
           </Button>
           <Button
             variant="destructive"
@@ -202,12 +204,12 @@ export default function EmergencyConfirm() {
             {loading ? (
               <>
                 <Loader2 className="h-4 w-4 animate-spin mr-2" />
-                Sending Alert Emails...
+                {t('Sending Alert Emails...')}
               </>
             ) : (
               <>
                 <AlertTriangle className="h-4 w-4 mr-2" />
-                Confirm Emergency Alert
+                {t('Confirm Emergency Alert')}
               </>
             )}
           </Button>
@@ -216,4 +218,3 @@ export default function EmergencyConfirm() {
     </div>
   );
 }
-
